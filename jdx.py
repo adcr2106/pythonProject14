@@ -156,9 +156,9 @@ def adivinar_mensaje(mensaje, mensaje_pc1):
     ganador_final(mensaje_pc2, mensaje_pc1)
 
 def desencriptar():
-    mensaje = input("Ingresa el mensaje hxadecimal")
-    a = int(input("""Teniendo en cuenta la formula Cual es el valor de a """))
-    b = int(input('Cual es el valor de b '))
+    mensaje = input("Ingresa el mensaje hexadecimal: ")
+    a = int(input("Cual es el valor de a: "))
+    b = int(input('Cual es el valor de b: '))
     n = len(CARACTERES)
 
     if math.gcd(a, n) != 1:
@@ -183,16 +183,18 @@ def main():
         a_resultado = a % n
         b_resultado = b % n
 
-        print("*****************************************************************")
-        print("Ingresa '1' para desencriptar un mensaje o '2' para jugar normalmente ")
-        opcion = input("")
+        print("*-+*-+*-+*-+*-+*-+*-+*-+*-+*-+*-+*-+*-+*-+*-+*-+*-+*-+*-+*-+*-+*-+*-+*-+")
+        print("""Bienvenido
+        -Ingresa la letra 'D' para desencriptar un mensaje 
+        -Ingresa la letra 'N' para jugar normalmente """)
+        opcion = input("*")
 
-        if opcion == '1':
+        if opcion == 'D':
             desencriptar()
-        elif opcion == '2':
+        elif opcion == 'N':
             texto = input('ingrese un texto a encriptar: ')
             encriptar_mensaje(texto, a_resultado, b_resultado)
         else:
-            print('Input inválido')
+            print('Opcion no valida, Asegurese de poner su opcion en letras mayusculas')
 
 main()
